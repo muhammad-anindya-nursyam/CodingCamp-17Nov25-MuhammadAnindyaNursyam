@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Muhammad Anindya Nursyam</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <nav class="navbar">
+            <div class="nav-brand">
+                <h2>Anindya</h2>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#profile" class="nav-link">Our Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#message" class="nav-link">Message Us</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Home Section -->
+    <section id="home" class="home-section">
+        <div class="home-content">
+            <div class="welcome-text">
+                <h1 id="welcome-message">Hi, </h1>
+                <p>Welcome to my portfolio website. I'm a passionate software engineer with expertise in web development and problem-solving.</p>
+                <a href="#profile" class="cta-button">Learn More About Me</a>
+            </div>
+            <div class="home-image">
+                <img src="https://via.placeholder.com/400x300" alt="Muhammad Anindya Nursyam">
+            </div>
+        </div>
+    </section>
+
+    <!-- Profile Section -->
+    <section id="profile" class="profile-section">
+        <div class="container">
+            <h2 class="section-title">Our Profile</h2>
+            
+            <!-- Banner -->
+            <div class="banner">
+                <img src="https://via.placeholder.com/1200x300" alt="Company Banner">
+            </div>
+            
+            <!-- About Company -->
+            <div class="about-company">
+                <h3>About Me</h3>
+                <p>I am Muhammad Anindya Nursyam, a dedicated software engineer with a passion for creating innovative solutions. With a strong foundation in web development and programming, I strive to deliver high-quality products that meet user needs.</p>
+                <p>My journey in technology started during my university years, and since then, I've been continuously learning and adapting to new technologies and methodologies.</p>
+            </div>
+            
+            <!-- Vision & Mission -->
+            <div class="vision-mission">
+                <div class="vision">
+                    <h3>Vision</h3>
+                    <p>To become a leading software engineer who creates impactful digital solutions that improve people's lives and drive technological advancement.</p>
+                </div>
+                <div class="mission">
+                    <h3>Mission</h3>
+                    <ul>
+                        <li>Continuously learn and adapt to emerging technologies</li>
+                        <li>Develop user-centric applications with clean, efficient code</li>
+                        <li>Collaborate effectively in team environments to deliver quality products</li>
+                        <li>Contribute to open-source projects and the developer community</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Message Us Section -->
+    <section id="message" class="message-section">
+        <div class="container">
+            <h2 class="section-title">Message Us</h2>
+            <div class="form-container">
+                <form id="message-form">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                        <span class="error-message" id="name-error"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                        <span class="error-message" id="email-error"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" required>
+                        <span class="error-message" id="phone-error"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="message-text">Message</label>
+                        <textarea id="message-text" name="message" rows="5" required></textarea>
+                        <span class="error-message" id="message-error"></span>
+                    </div>
+                    <button type="submit" class="submit-button">Submit</button>
+                </form>
+                
+                <div class="form-result" id="form-result">
+                    <h3>Form Submission Result</h3>
+                    <div id="result-content">
+                        <p>Your form data will appear here after submission.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Muhammad Anindya Nursyam. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="ja/script.js"></script>
+</body>
+</html>
