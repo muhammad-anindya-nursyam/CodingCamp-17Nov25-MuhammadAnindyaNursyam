@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - Muhammad Anindya Nursyam</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -19,6 +20,9 @@
                 </li>
                 <li class="nav-item">
                     <a href="#profile" class="nav-link">Our Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#achievements" class="nav-link">Achievements</a>
                 </li>
                 <li class="nav-item">
                     <a href="#message" class="nav-link">Message Us</a>
@@ -38,11 +42,20 @@
             <div class="welcome-text">
                 <h1 id="welcome-message">Hi, </h1>
                 <p>Welcome to my portfolio website. I'm a passionate software engineer with expertise in web development and problem-solving.</p>
-                <a href="#profile" class="cta-button">Learn More About Me</a>
+                <div class="cta-buttons">
+                    <a href="#profile" class="cta-button">Learn More About Me</a>
+                    <a href="#achievements" class="cta-button secondary">My Achievements</a>
+                </div>
             </div>
             <div class="home-image">
-                <img src="https://via.placeholder.com/400x300" alt="Muhammad Anindya Nursyam">
+                <div class="floating-card">
+                    <img src="https://via.placeholder.com/300x300" alt="Muhammad Anindya Nursyam">
+                </div>
             </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scroll Down</span>
+            <i class="fas fa-chevron-down"></i>
         </div>
     </section>
 
@@ -66,10 +79,16 @@
             <!-- Vision & Mission -->
             <div class="vision-mission">
                 <div class="vision">
+                    <div class="icon-box">
+                        <i class="fas fa-eye"></i>
+                    </div>
                     <h3>Vision</h3>
                     <p>To become a leading software engineer who creates impactful digital solutions that improve people's lives and drive technological advancement.</p>
                 </div>
                 <div class="mission">
+                    <div class="icon-box">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
                     <h3>Mission</h3>
                     <ul>
                         <li>Continuously learn and adapt to emerging technologies</li>
@@ -77,6 +96,47 @@
                         <li>Collaborate effectively in team environments to deliver quality products</li>
                         <li>Contribute to open-source projects and the developer community</li>
                     </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements" class="achievements-section">
+        <div class="container">
+            <h2 class="section-title">My Achievements</h2>
+            <div class="achievements-grid">
+                <div class="achievement-card">
+                    <div class="achievement-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3>Best Web Developer 2023</h3>
+                    <p>Awarded for outstanding performance in web development projects and innovative solutions.</p>
+                    <button class="achievement-btn">View Details</button>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3>Google Cloud Certified</h3>
+                    <p>Professional Cloud Architect certification demonstrating expertise in cloud solutions.</p>
+                    <button class="achievement-btn">View Details</button>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Open Source Contributor</h3>
+                    <p>Active contributor to multiple open-source projects with 100+ commits in the last year.</p>
+                    <button class="achievement-btn">View Details</button>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Team Leadership</h3>
+                    <p>Successfully led a team of 5 developers to deliver a complex project ahead of schedule.</p>
+                    <button class="achievement-btn">View Details</button>
                 </div>
             </div>
         </div>
@@ -108,7 +168,10 @@
                         <textarea id="message-text" name="message" rows="5" required></textarea>
                         <span class="error-message" id="message-error"></span>
                     </div>
-                    <button type="submit" class="submit-button">Submit</button>
+                    <button type="submit" class="submit-button">
+                        <span>Submit Message</span>
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
                 </form>
                 
                 <div class="form-result" id="form-result">
@@ -124,10 +187,22 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2025 Muhammad Anindya Nursyam. All rights reserved.</p>
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>Muhammad Anindya Nursyam</h3>
+                    <p>Software Engineer & Web Developer</p>
+                </div>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <p class="copyright">&copy; 2025 Muhammad Anindya Nursyam. All rights reserved.</p>
         </div>
     </footer>
 
-    <script src="ja/script.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
