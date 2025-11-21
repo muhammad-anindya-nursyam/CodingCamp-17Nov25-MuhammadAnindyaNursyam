@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Mobile Navigation Toggle
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('.nav-menu');
+    const navbar = document.querySelector('.navbar');
     
     hamburger.addEventListener('click', function() {
         hamburger.classList.toggle('active');
@@ -14,6 +15,15 @@ document.addEventListener('DOMContentLoaded', function() {
         hamburger.classList.remove('active');
         navMenu.classList.remove('active');
     }));
+    
+    // Navbar scroll effect
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
     
     // Welcome Message
     const welcomeMessage = document.getElementById('welcome-message');
@@ -72,12 +82,25 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // If form is valid, display results
         if (isValid) {
-            formResult.innerHTML = `
-                <p><strong>Name:</strong> ${name}</p>
-                <p><strong>Email:</strong> ${email}</p>
-                <p><strong>Phone Number:</strong> ${phone}</p>
-                <p><strong>Message:</strong> ${message}</p>
-            `;
+            // Add animation to form result
+            formResult.parentElement.style.opacity = '0';
+            formResult.parentElement.style.transform = 'translateY(20px)';
+            
+            setTimeout(() => {
+                formResult.innerHTML = `
+                    <p><strong>Name:</strong> ${name}</p>
+                    <p><strong>Email:</strong> ${email}</p>
+                    <p><strong>Phone Number:</strong> ${phone}</p>
+                    <p><strong>Message:</strong> ${message}</p>
+                    <div class="success-message" style="margin-top: 1rem; padding: 10px; background: #d4edda; color: #155724; border-radius: 5px;">
+                        <i class="fas fa-check-circle"></i> Thank you for your message! We'll get back to you soon.
+                    </div>
+                `;
+                
+                formResult.parentElement.style.opacity = '1';
+                formResult.parentElement.style.transform = 'translateY(0)';
+                formResult.parentElement.style.transition = 'all 0.5s ease';
+            }, 300);
             
             // Reset form
             messageForm.reset();
@@ -106,10 +129,46 @@ document.addEventListener('DOMContentLoaded', function() {
             const targetElement = document.querySelector(targetId);
             if (targetElement) {
                 window.scrollTo({
-                    top: targetElement.offsetTop - 70,
+                    top: targetElement.offsetTop - 80,
                     behavior: 'smooth'
                 });
             }
+        });
+    });
+    
+    // Achievement buttons functionality
+    document.querySelectorAll('.achievement-btn').forEach(button => {
+        button.addEventListener('click', function() {
+            const card = this.closest('.achievement-card');
+            const title = card.querySelector('h3').textContent;
+            alert(`You clicked on: ${title}\n\nThis would typically open a modal with more details about this achievement.`);
+        });
+    });
+    
+    // Scroll animations
+    const fadeElements = document.querySelectorAll('.vision, .mission, .achievement-card, .banner, .about-company');
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.1 });
+    
+    fadeElements.forEach(el => {
+        el.classList.add('fade-in');
+        observer.observe(el);
+    });
+    
+    // Add some interactive effects
+    document.querySelectorAll('.achievement-card, .vision, .mission').forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-10px)';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0)';
         });
     });
 });
