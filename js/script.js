@@ -93,7 +93,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <p><strong>Phone Number:</strong> ${phone}</p>
                     <p><strong>Message:</strong> ${message}</p>
                     <div class="success-message" style="margin-top: 1rem; padding: 10px; background: #d4edda; color: #155724; border-radius: 5px;">
-                        <i class="fas fa-check-circle"></i> Thank you for your message! We'll get back to you soon.
+                        <i class="fas fa-check-circle"></i> Thank you for your message! I'll get back to you soon.
                     </div>
                 `;
                 
@@ -136,17 +136,30 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Achievement buttons functionality
-    document.querySelectorAll('.achievement-btn').forEach(button => {
-        button.addEventListener('click', function() {
-            const card = this.closest('.achievement-card');
-            const title = card.querySelector('h3').textContent;
-            alert(`You clicked on: ${title}\n\nThis would typically open a modal with more details about this achievement.`);
+    // Progress bar animation on scroll
+    const progressBars = document.querySelectorAll('.progress');
+    
+    const progressObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const progressBar = entry.target;
+                const width = progressBar.style.width;
+                progressBar.style.width = '0';
+                
+                setTimeout(() => {
+                    progressBar.style.transition = 'width 1.5s ease-in-out';
+                    progressBar.style.width = width;
+                }, 300);
+            }
         });
+    }, { threshold: 0.5 });
+    
+    progressBars.forEach(bar => {
+        progressObserver.observe(bar);
     });
     
     // Scroll animations
-    const fadeElements = document.querySelectorAll('.vision, .mission, .achievement-card, .banner, .about-company');
+    const fadeElements = document.querySelectorAll('.vision, .mission, .course-highlight, .learning-path, .future-goals, .banner, .about-company');
     
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -162,7 +175,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // Add some interactive effects
-    document.querySelectorAll('.achievement-card, .vision, .mission').forEach(card => {
+    document.querySelectorAll('.goal-card, .vision, .mission').forEach(card => {
         card.addEventListener('mouseenter', function() {
             this.style.transform = 'translateY(-10px)';
         });
